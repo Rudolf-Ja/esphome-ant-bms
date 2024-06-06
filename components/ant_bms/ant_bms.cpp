@@ -105,7 +105,7 @@ bool AntBms::parse_ant_bms_byte_(uint8_t byte) {
     return true;
 
   if (!(raw[0] == 0xAA && raw[1] == 0x55 && raw[2] == 0xAA && raw[3] == 0xFF) && !(raw[0] == 0x7E && raw[1] == 0xA1)) {
-    ESP_LOGW(TAG, "Invalid header");
+    ESP_LOGW(TAG, "Invalid header",raw[0],raw[1],raw[2],raw[3]);
 
     // return false to reset buffer
     return false;
