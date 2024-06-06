@@ -491,8 +491,8 @@ void AntBms::read_registers_() {
   frame[1] = 0x5A;
   frame[2] = 0x00;
   frame[3] = 0x00;
-  frame[4] = 0x00;
-  frame[5] = 0x00;
+  frame[4] = 0x01;
+  frame[5] = 0x01;
 
   this->write_array(frame, 6);
     ESP_LOGW(TAG, "Read_registers %x %x %x %x %x %x",frame[0],frame[1],frame[2],frame[3],frame[4],frame[5]);
