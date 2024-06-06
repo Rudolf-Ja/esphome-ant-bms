@@ -481,6 +481,7 @@ void AntBms::send_(uint8_t function, uint8_t address, uint16_t value) {
   frame[5] = frame[2] + frame[3] + frame[4];
 
   this->write_array(frame, 6);
+    ESP_LOGW(TAG, "Fucked Invalid header %x %x %x %x %x %x",frame[0],frame[1],frame[2],frame[3],frame[4],frame[5]);
   this->flush();
 }
 
@@ -494,6 +495,7 @@ void AntBms::read_registers_() {
   frame[5] = 0x01;
 
   this->write_array(frame, 6);
+    ESP_LOGW(TAG, "Fucked Invalid header %x %x %x %x %x %x",frame[0],frame[1],frame[2],frame[3],frame[4],frame[5]);
   this->flush();
 }
 
@@ -527,6 +529,7 @@ void AntBms::authenticate_v2021_() {
   frame[21] = 0x55;
 
   this->write_array(frame, 22);
+    ESP_LOGW(TAG, "Fucked Invalid header %x %x %x %x %x %x",frame[0],frame[1],frame[2],frame[3],frame[4],frame[5]);
   this->flush();
 }
 
@@ -543,6 +546,7 @@ void AntBms::authenticate_v2021_variable_(const uint8_t *data, uint8_t data_len)
   frame.push_back(0x55);
 
   this->write_array(frame.data(), frame.size());
+    ESP_LOGW(TAG, "Fucked Invalid header %x %x %x %x %x %x",frame[0],frame[1],frame[2],frame[3],frame[4],frame[5]);
   this->flush();
 }
 
@@ -563,6 +567,7 @@ void AntBms::send_v2021_(uint8_t function, uint8_t address, uint16_t value) {
   frame[9] = 0x55;      // footer
 
   this->write_array(frame, 10);
+    ESP_LOGW(TAG, "Fucked Invalid header %x %x %x %x %x %x",frame[0],frame[1],frame[2],frame[3],frame[4],frame[5]);
   this->flush();
 }
 
