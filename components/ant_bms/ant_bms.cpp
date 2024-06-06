@@ -112,7 +112,7 @@ bool AntBms::parse_ant_bms_byte_(uint8_t byte) {
   }
   else
   {
-      ESP_LOGW(TAG, "Valid header %d %d %d %d %d",raw[0],raw[1],raw[2],raw[3],at);
+      ESP_LOGW(TAG, "**************************************Valid header %d %d %d %d %d",raw[0],raw[1],raw[2],raw[3],at);
   }
 
   // Byte 0...5
